@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("RapidResuce")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cb268ec1a54a5c38cb11d42862234f1b537b6039")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7ad0da568821c447a941c08122e7ec149a5611ea")]
 [assembly: System.Reflection.AssemblyProductAttribute("RapidResuce")]
 [assembly: System.Reflection.AssemblyTitleAttribute("RapidResuce")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -8205,11 +8205,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\FCC\\Documents\\GitHub\\Techwiz5\\RapidResuce\\RapidResuce\\RapidResuce.csproj",
+      "projectUniqueName": "C:\\Users\\FCC\\Documents\\GitHub\\RapidRescue\\RapidResuce\\RapidResuce\\RapidResuce.csproj",
       "projectName": "RapidResuce",
-      "projectPath": "C:\\Users\\FCC\\Documents\\GitHub\\Techwiz5\\RapidResuce\\RapidResuce\\RapidResuce.csproj",
+      "projectPath": "C:\\Users\\FCC\\Documents\\GitHub\\RapidRescue\\RapidResuce\\RapidResuce\\RapidResuce.csproj",
       "packagesPath": "C:\\Users\\FCC\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\FCC\\Documents\\GitHub\\Techwiz5\\RapidResuce\\RapidResuce\\obj\\",
+      "outputPath": "C:\\Users\\FCC\\Documents\\GitHub\\RapidRescue\\RapidResuce\\RapidResuce\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

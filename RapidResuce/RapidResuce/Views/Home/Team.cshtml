@@ -1,0 +1,59 @@
+﻿@model IEnumerable<RapidResuce.Models.User>
+
+@{
+    ViewData["Title"] = "Team";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+
+<!-- start page title section -->
+<section class="page-title-section bg-img cover-background" data-overlay-dark="75" data-background="/user/img/banner/page-title.jpg">
+    <div class="container">
+        &nbsp;
+
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Our Team</h1>
+            </div>
+            <div class="col-md-12">
+                <ul>
+                    <li><a asp-action="Index" asp-controller="Home">Home</a></li>
+                    <li><a href="javascript:void(0)">Our Team</a></li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- start team card section -->
+<section class="py-5">
+    <div class="container">
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col-lg-4 col-sm-6 margin-30px-bottom mobile-margin-20px-bottom">
+                    <div class="team-block position-relative">
+                        <div class="team-img position-relative overflow-hidden">
+                            <img src="~/@item.Image" alt="" />
+                            <div class="box-overlay"></div>
+                            <ul class="social-icons no-margin-bottom">
+                                <div class="item-icon margin-10px-bottom">
+                                    <a class="popimg" href="~/@item.Image"><i class="ti-eye text-white font-size18"></i></a>
+                                </div>
+                            </ul>
+                        </div>
+                        <div class="detail bg-light-gray padding-30px-all md-padding-25px-all xs-padding-15px-all text-center">
+                            <h6 class="margin-5px-bottom xs-no-margin-bottom font-size20 xs-font-size18"><a href="javascript:void(0)" class="text-black">@item.FirstName @item.LastName</a></h6>
+                            <p class="no-margin-bottom">@item.Role</p>
+                            <p class="no-margin-bottom">@item.Phone </p>
+                            <p class="no-margin-bottom">@item.Email</p>
+                            <p class="no-margin-bottom">@item.Address</p>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>
+<!-- end team card section -->

@@ -1,0 +1,109 @@
+﻿@model Contact
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+<!-- start page title section -->
+<section class="page-title-section bg-img cover-background" data-overlay-dark="75" data-background="/user/img/banner/page-title.jpg">
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-12">
+                &nbsp;
+                <h1>Contact Us</h1>
+            </div>
+            <div class="col-md-12">
+                <ul>
+                    <li><a asp-action="Index" asp-controller="Home">Home</a></li>
+                    <li><a href="javascript:void(0)">Contact us</a></li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</section>
+<!-- end page title section -->
+<!-- start contact-info section -->
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 sm-margin-25px-bottom">
+                <div class="padding-30px-all sm-padding-25px-all xs-padding-20px-all bg-light-gray text-center">
+                    <i class="ti-email font-size40 sm-font-size38 xs-font-size34 text-theme-color"></i>
+                    <h5 class="margin-5px-bottom margin-20px-top sm-margin-15px-top font-size20 xs-font-size18">Email Us:</h5>
+                    <p class="no-margin-bottom">Info@rapidResuce.com</p>
+                </div>
+            </div>
+            <div class="col-lg-4 sm-margin-25px-bottom">
+                <div class="padding-30px-all sm-padding-25px-all xs-padding-20px-all bg-light-gray text-center">
+                    <i class="ti-mobile font-size40 sm-font-size38 xs-font-size34 text-theme-color"></i>
+                    <h5 class="margin-5px-bottom margin-20px-top sm-margin-15px-top font-size20 xs-font-size18">Call Us:</h5>
+                    <p class="no-margin-bottom">(+44) 123 456 789</p>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="padding-30px-all sm-padding-25px-all xs-padding-20px-all bg-light-gray text-center">
+                    <i class="ti-location-pin font-size40 sm-font-size38 xs-font-size34 text-theme-color"></i>
+                    <h5 class="margin-5px-bottom margin-20px-top sm-margin-15px-top font-size20 xs-font-size18">Our Address:</h5>
+                    <p class="no-margin-bottom">74 Norava Street 542B, London</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end contact-info section -->
+<!-- start form section -->
+<section class="no-padding-top">
+    <div class="container">
+        <div class="padding-40px-all sm-padding-30px-all xs-padding-20px-all bg-light-gray">
+            <h4 class="font-size38 sm-font-size34 xs-font-size28 line-height-45 sm-line-height-40 font-weight-500 margin-10px-bottom text-center">Contact Us</h4>
+            <p class="margin-50px-bottom sm-margin-30px-bottom xs-margin-25px-bottom width-60 md-width-70 sm-width-auto center-col text-center">We're here to assist you 24/7 with any inquiries or support.</p>
+            <form id="contactForm">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label>Name</label>
+                            <input name="name" type="text" class="no-margin-bottom">
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="email" name="email" class="no-margin-bottom">
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label>Subject</label>
+                            <input type="text" name="subject" class="no-margin-bottom">
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label>Phone Number</label>
+                            <input type="text" name="phoneNumber" class="no-margin-bottom">
+                        </div>
+                    </div>
+                    <div class="col-lg-12 margin-20px-bottom sm-margin-10px-bottom">
+                        <div class="form-group">
+                            <label>Message</label>
+                            <textarea name="message" class="form-control line-height-70"></textarea>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="Send">
+                            <button class="butn" type="button" onclick="contact.save()">Submit</button>
+                        </div>
+                    </div>
+                </div>
+
+            </form>
+            <p class="form-messege"></p>
+        </div>
+    </div>
+</section>
+<!-- end form section -->
+
+<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d7125168.022058162!2d70.68733554999999!3d29.309154400000015!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2s!4v1625513723843!5m2!1sen!2s" width="1800" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+

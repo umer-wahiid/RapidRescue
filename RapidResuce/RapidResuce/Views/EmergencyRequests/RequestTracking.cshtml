@@ -1,0 +1,224 @@
+﻿@model RapidResuce.Models.EmergencyRequest
+
+@{
+    ViewData["Title"] = "RequestTracking";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+<style>
+    .nav-pills .active {
+        background-color: #2a2f5b;
+        color: white;
+    }
+</style>
+<!-- start page title section -->
+<section class="page-title-section bg-img cover-background" data-overlay-dark="75" data-background="/user/img/banner/page-title.jpg">
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-12">
+                &nbsp;
+                <h1>Request Details</h1>
+            </div>
+            <div class="col-md-12">
+                <ul>
+                    <li><a asp-action="Index" asp-controller="Home">Home</a></li>
+                    <li><a href="javascript:void(0)">Request Details</a></li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</section>
+<section>
+
+    <div class="container">
+        <ul class="nav nav-pills">
+            <li><a data-toggle="pill" class="px-2 py-1 active" href="#home">Details</a></li>
+            @if (Model?.AmbulanceId != null && Model?.AmbulanceId != 0)
+            {
+                <li><a data-toggle="pill" class="px-2 py-1" href="#menu1">Ambulance</a></li>
+            }
+            <li><a data-toggle="pill" class="px-2 py-1" href="#menu2">Basic First-Aid</a></li>
+            @if (Model.AmbulanceId != null && Model.AmbulanceId != 0)
+            {
+                <li><a data-toggle="pill" class="px-2 py-1" href="#menu3">Tracker</a></li>
+            }
+        </ul>
+        <hr class="my-0">
+        <div class="tab-content">
+            <div id="home" class="tab-pane p-4 active">
+                <dl class="row">
+                    <div class="card col-12 mb-4">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <p class="mb-0">Status</p>
+                                </div>
+                                <div class="col-sm-9">
+                                    <p class="text-muted mb-0">@Model.Status</p>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <p class="mb-0">Type</p>
+                                </div>
+                                <div class="col-sm-9">
+                                    <p class="text-muted mb-0">@Model.Type</p>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <p class="mb-0">Pickup Address</p>
+                                </div>
+                                <div class="col-sm-9">
+                                    <p class="text-muted mb-0">@Model.PickupAddress</p>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <p class="mb-0">Hospital</p>
+                                </div>
+                                <div class="col-sm-9">
+                                    <p class="text-muted mb-0">@Model.HospitalName</p>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <p class="mb-0">Emergency Contact</p>
+                                </div>
+                                <div class="col-sm-9">
+                                    <p class="text-muted mb-0">@Model.EmergencyContact</p>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <p class="mb-0">Medical Info</p>
+                                </div>
+                                <div class="col-sm-9">
+                                    <p class="text-muted mb-0">@Model.MedicalInfo</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </dl>
+            </div>
+            <div id="menu1" class="tab-pane p-4 fade">
+                @if (Model.AmbulanceId != null && Model.AmbulanceId != 0)
+                {
+                    <dl class="row">
+                        <div class="col-lg-4 p-4">
+                            <div class="card mb-4">
+                                <div class="card-body text-center">
+                                    <img src="~/@Model.Ambulance.Image" alt="avatar"
+                                         class="rounded-circle img-fluid" style="width: 150px;">
+                                    <h5 class="my-3">@Model.Ambulance.Driver.FirstName</h5>
+                                    <p class="text-muted mb-1">@Model.Ambulance.VehicleNumber</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-8 p-4">
+                            <div class="card mb-4">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <p class="mb-0">Vehicle No.</p>
+                                        </div>
+                                        <div class="col-sm-9">
+                                            <p class="text-muted mb-0">@Model.Ambulance.VehicleNumber</p>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <p class="mb-0">Equipments</p>
+                                        </div>
+                                        <div class="col-sm-9">
+                                            <p class="text-muted mb-0">@Model.Ambulance.EquipmentLevel</p>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <p class="mb-0">Driver Contact</p>
+                                        </div>
+                                        <div class="col-sm-9">
+                                            <p class="text-muted mb-0">@Model.Ambulance.Driver.Phone</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </dl>
+                }
+            </div>
+            <div id="menu2" class="tab-pane p-4 fade">
+                <div class="card card-round" id="buildContractSchedule">
+                    <div class="card-header" style="border-top: 1px solid #ebecec !important;">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <h5 class="card-title">Basic Precautions To Take Untill Ambulance Arrives</h5>
+                            <div class="d-flex align-items-center justify-content-between">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <p>@Model.FirstAid.FirstAidDetail</p>
+                    </div>
+                </div>
+            </div>
+            <div id="menu3" class="tab-pane p-4 fade">
+                <div class="card card-round" id="buildContractSchedule">
+                    <div class="card-header" style="border-top: 1px solid #ebecec !important;">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <h5 class="card-title">Track Ambulance</h5>
+                            <div class="d-flex align-items-center justify-content-between">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <dl class="row">
+                            <div class="card col-12">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <p class="mb-0">ETA</p>
+                                        </div>
+                                        <div class="col-sm-9">
+                                            <p class="text-muted mb-0" id="estTime">Driver's GPS is off</p>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <p class="mb-0">Distance</p>
+                                        </div>
+                                        <div class="col-sm-9">
+                                            <p class="text-muted mb-0" id="estDis">Driver's GPS is off'</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </dl>
+                        @*                         <dl class="row">
+                        <dt class="col-sm-2">
+                        ETA
+                        </dt>
+                        <dd class="col-sm-10" id="estTime">
+                        </dd>
+                        <dt class="col-sm-2">
+                        Distance
+                        </dt>
+                        <dd class="col-sm-10" id="estDis">
+                        </dd>
+                        </dl> *@
+                        <div id="mapUser" style="height: 500px; width: 100%;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

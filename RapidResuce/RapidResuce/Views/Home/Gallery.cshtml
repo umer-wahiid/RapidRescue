@@ -1,0 +1,55 @@
+﻿@model IEnumerable<RapidResuce.Models.Ambulance>
+
+@{
+    ViewData["Title"] = "Gallery";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+<!-- start page title section -->
+<section class="page-title-section bg-img cover-background" data-overlay-dark="75" data-background="/user/img/banner/page-title.jpg">
+    <div class="container">
+        &nbsp;
+
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Ambulances</h1>
+            </div>
+            <div class="col-md-12">
+                <ul>
+                    <li><a asp-action="Index" asp-controller="Home">Home</a></li>
+                    <li><a href="javascript:void(0)">Gallery</a></li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</section>
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="gallery text-center width-100">
+
+                @foreach (var item in Model)
+                {
+
+                    <div class="col-lg-4 col-md-6 margin-30px-bottom xs-margin-20px-bottom items">
+                        <div class="portfolio-block position-relative overflow-hidden">
+                            <div class="item-img">
+                                <img src="~/@item.Image" alt="..." />
+                            </div>
+                            <div class="item-content">
+                                <div class="item-icon margin-10px-bottom">
+                                    <a asp-action="AmbulanceDetail" asp-controller="Home" asp-route-id="@item.Id"><i class="ti-eye text-white font-size18"></i></a>
+                                </div>
+                                <h5 class="no-margin-bottom xs-margin-5px-bottom font-weight-500 font-size24 md-font-size22 xs-font-size20"><a  class="text-white">@item.VehicleNumber</a></h5>
+                            </div>
+                        </div>
+                    </div>
+
+
+                }
+            </div>
+        </div>
+    </div>
+</section>
+

@@ -1,0 +1,363 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - RapidResuce</title>
+    <link rel="shortcut icon" href="~/user/img/logos/amblogo.png" />
+    <link rel="apple-touch-icon" href="~/user/img/logos/amblogo.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="~/user/img/logos/darklogo.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="~/user/img/logos/darklogo.png" />
+
+    <!-- plugins -->
+    <link rel="stylesheet" href="~/user/css/plugins.css" />
+
+    <!-- search css -->
+    <link rel="stylesheet" href="~/user/search/search.css" />
+
+    <!-- core style css -->
+    <link href="~/user/css/styles.css" rel="stylesheet" />
+
+</head>
+<style>
+    .video-background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1;
+    }
+
+    .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.1); /* Dark overlay to ensure text visibility */
+        z-index: 0;
+    }
+
+    .banner-section {
+        position: relative;
+        z-index: 1;
+    }
+
+    .dropdown-menu {
+        display: none;
+        position: absolute;
+        background-color: #fff;
+        padding: 5px;
+        list-style: none;
+        z-index: 1000;
+    }
+
+    /* Show the dropdown on hover */
+    .dropdown:hover .dropdown-menu {
+        display: block;
+    }
+
+    /* Style the dropdown links */
+    .dropdown-menu li a {
+        color: black;
+        text-decoration: none;
+        display: block;
+        padding: 5px 10px;
+    }
+
+        /* Dropdown menu background and link hover effect */
+        .dropdown-menu li a:hover {
+            color: #fff;
+            background-color: #2a2f5b;
+            border-radius: 5px;
+        }
+</style>
+<body>
+
+
+    <!-- start page loading -->
+    <div id="preloader">
+        <div class="row loader">
+            <div class="loader-icon"></div>
+        </div>
+    </div>
+    <!-- end page loading -->
+    <!-- start main-wrapper section -->
+    <div class="main-wrapper">
+
+
+        <!-- start header section -->
+        <header class="position-absolute width-100 transparent-header ">
+            <div id="top-bar" class="top-bar">
+                <div class="container lg-container">
+                    <div class="row">
+                        <div class="col-md-3 xs-display-none">
+                            @*                             <ul class="top-social-icon">
+                            <li><a href="~/user/javascript:void(0)"><i class="fab fa-facebook-f"></i></a></li>
+                            <li><a href="~/user/javascript:void(0)"><i class="fab fa-twitter"></i></a></li>
+                            <li><a href="~/user/javascript:void(0)"><i class="fab fa-pinterest-p"></i></a></li>
+                            <li><a href="~/user/javascript:void(0)"><i class="fab fa-linkedin-in"></i></a></li>
+                            <li><a href="~/user/javascript:void(0)"><i class="fab fa-dribbble"></i></a></li>
+                            </ul> *@
+                        </div>
+
+                        <div class="col-xs-12 col-md-9">
+                            <div class="top-bar-info">
+                                <ul>
+                                    <li><i class="fas fa-phone small"></i>(+92) 317 0241586</li>
+                                    <li><i class="fas fa-envelope small"></i>Info@rapidResuce.com</li>
+                                    <li class="sm-display-none small"><i class="far fa-clock"></i>Available 24/7</li>
+                                    @if (Session.UserId == 0)
+                                    {
+                                        <li class="sm-display-none small "><a asp-action="Index" asp-controller="Login" class="text-white"><i class="far fa-lock"></i>Login</a></li>
+                                    }
+                                    else
+                                    {
+                                        <li class="dropdown small">
+                                            <a href="#" class="dropdown-toggle text-white">
+                                                <i class="far fa-lock"></i> Account
+                                            </a>
+                                            <ul class="dropdown-menu" style="width: 180px;">
+                                                <li class="w-100"><a asp-action="Profile" asp-controller="UserAuth">Profile</a></li>
+                                                <li class="w-100"><a asp-action="Index" asp-controller="MedicalProfile">Medical Profile</a></li>
+                                                <li class="w-100"><a asp-action="Logout" asp-controller="Login">Logout</a></li>
+                                            </ul>
+                                        </li>
+                                    }
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="navbar-default">
+
+                <!-- start top search -->
+                <div class="top-search bg-black-opacity-light">
+                    <div class="container">
+                        <form class="search-form" action="https://danslacuisinededede.com/ambulance/search.html"
+                              method="GET" accept-charset="utf-8">
+                            <div class="input-group">
+                                <span class="input-group-addon cursor-pointer">
+                                    <button class="search-form_submit fas fa-search font-size18 text-white"
+                                            type="submit"></button>
+                                </span>
+                                <input type="text" class="search-form_input form-control" name="s" autocomplete="off"
+                                       placeholder="Type & hit enter...">
+                                <span class="input-group-addon close-search">
+                                    <i class="fas fa-times font-size18 margin-5px-top"></i>
+                                </span>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!-- end top search -->
+
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-12 col-lg-12">
+                            <div class="menu_area alt-font">
+                                <nav class="navbar navbar-expand-lg navbar-light no-padding">
+
+                                    <div class="navbar-header navbar-header-custom">
+                                        <!-- start logo -->
+                                        <a href="/" class="navbar-brand inner-logo">
+                                            <img id="logo"
+                                                 src="~/user/img/logos/amblogo.png" alt="logo">
+                                        </a>
+                                        <!-- end logo -->
+                                    </div>
+
+                                    <div class="navbar-toggler"></div>
+
+                                    <ul class="navbar-nav ml-auto" id="nav" style="display: none;">
+                                        <li><a asp-action="Index" asp-controller="Home">Home</a></li>
+                                        <li>
+                                            <a asp-action="Index" asp-controller="EmergencyRequests">Emergency Request</a>
+                                        </li>
+                                        @*                                         <li>
+                                        <a href="#">Services</a>
+                                        <ul>
+                                        <li>
+                                        <a href="~/user/services.html">
+                                        Services
+                                        </a>
+                                        </li>
+                                        <li><a href="~/user/service-details.html">Services Details</a></li>
+                                        </ul>
+                                        </li> *@
+                                        <li><a asp-action="Gallery" asp-controller="Home">Gallery</a></li>
+                                        <li><a asp-action="Team" asp-controller="Home">Our Team</a></li>
+                                        <li><a asp-action="About" asp-controller="Home">About</a></li>
+
+                                        <li><a asp-action="Index" asp-controller="Contact">Contact</a></li>
+                                        @if (Session.UserId != 0)
+                                        {
+                                            <li><a asp-action="Index" asp-controller="Feeback">Feedback</a></li>
+                                            <li><a asp-action="RequestTracking" asp-controller="EmergencyRequests">Tracker</a></li>
+                                        }
+                                    </ul>
+
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </header>
+        @RenderBody()
+
+        <!-- start footer section -->
+        <footer>
+            <div class="container">
+                <div class="footer-5 footer-style3">
+                    <div class="row">
+
+                        <div class="col-lg-3 col-md-6">
+                            <h4 class="mobile-margin-10px-bottom">Quick Contact</h4>
+                            <ul class="">
+                                <li>
+                                    <i class="ti-location-pin margin-10px-right md-margin-two-right text-theme-color"></i>27
+                                    Division St, New York, USA
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)" class="font-size14">
+                                        <i class="ti-email margin-10px-right md-margin-two-right text-theme-color"></i>Info@rapidResuce.com
+                                    </a>
+                                </li>
+                                <li>
+                                    <i class="ti-mobile margin-10px-right md-margin-two-right text-theme-color"></i>(+92) 317 0241586
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)" class="font-size14">
+                                        <i class="ti-time margin-10px-right md-margin-two-right text-theme-color"></i>24/7
+                                    </a>
+                                </li>
+
+                            </ul>
+
+
+                        </div>
+
+
+
+                        <div class="col-lg-3 col-sm-6 sm-margin-25px-bottom mobile-margin-20px-bottom">
+                            <div class="padding-70px-left md-padding-50px-left sm-no-padding-left">
+                                <h4 class="mobile-margin-10px-bottom">Our Services</h4>
+                                <ul class="footer-list no-margin-bottom">
+                                    <li><a asp-action="Index" asp-controller="EmergencyRequests" class="font-size14">Ambulance Car</a></li>
+                                    <li>
+                                        <a asp-action="Index" asp-controller="EmergencyRequests" class="font-size14">Medical Flight Services</a>
+                                    </li>
+                                    <li><a asp-action="Index" asp-controller="EmergencyRequests" class="font-size14">Medical Escort</a></li>
+                                    <li><a asp-action="Index" asp-controller="EmergencyRequests" class="font-size14">Private Air Ambulance</a></li>
+                                    <li><a asp-action="Index" asp-controller="EmergencyRequests" class="font-size14">Advance Life Support</a></li>
+                                    <li><a asp-action="Index" asp-controller="EmergencyRequests" class="font-size14">General Services</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 col-sm-6 mobile-margin-20px-bottom">
+                            <div class="padding-40px-left sm-no-padding-left">
+                                <h4 class="mobile-margin-10px-bottom">Quick Links</h4>
+                                <ul class="footer-list no-margin-bottom">
+                                    <li><a asp-action="Index" asp-controller="Home" class="font-size14">Home</a></li>
+                                    <li><a asp-action="About" asp-controller="Home" class="font-size14">About us</a></li>
+                                    <li><a asp-action="Index" asp-controller="Home" class="font-size14">Contact us</a></li>
+                                    <li><a asp-action="Team" asp-controller="Home" class="font-size14">Our Team</a></li>
+                                    <li><a asp-action="Gallery" asp-controller="Home" class="font-size14">Ambulances</a></li>
+                                    <li><a asp-action="Index" asp-controller="EmergencyRequests" class="font-size14">Request Ambulance</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 col-md-6 sm-margin-25px-bottom mobile-margin-20px-bottom">
+                            <div class="sm-padding-50px-right xs-no-padding-right">
+                                <span style="margin-bottom: 0px; margin-top: -85px;"
+                                      class="footer-logo display-inline-block">
+                                    <img src="~/user/img/logos/amblogo.png" style="height: 250px;" alt="logo">
+                                </span>
+                                <p class="no-margin-bottom pt-0" style="padding: 0px;margin: 0px;margin-top: -80px;">
+                                    We're here to assist you 24/7 with any inquiries or support.
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="footer-style3-bottom">
+                <div class="container">
+                    <p class="font-size14">&copy; 2024 Powered by SFC-Ciphers</p>
+                </div>
+            </div>
+        </footer>
+        <!-- end footer section -->
+
+    </div>
+    <!-- end main-wrapper section -->
+    <!-- start scroll to top -->
+    <a href="javascript:void(0)" class="scroll-to-top"><i class="fas fa-angle-up" aria-hidden="true"></i></a>
+    <!-- end scroll to top -->
+    <!-- all js include start -->
+    <!-- Java script -->
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAVl3rDv239K8Xjpr5Sr9Jf7NuK1W07pA8&callback=initUserMap"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/8.0.0/signalr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/7.0.0/signalr.min.js"></script>
+
+    <script src="~/js/signalR.js" asp-append-version="true"></script>
+    <script src="~/user/js/core.min.js"></script>
+
+    <!-- serch -->
+    <script src="~/user/search/search.js"></script>
+
+    <!-- revolution slider js files start -->
+    <script src="~/user/js/rev_slider/jquery.themepunch.tools.min.js"></script>
+    <script src="~/user/js/rev_slider/jquery.themepunch.revolution.min.js"></script>
+    <script src="~/user/js/rev_slider/extensions/revolution.extension.actions.min.js"></script>
+    <script src="~/user/js/rev_slider/extensions/revolution.extension.carousel.min.js"></script>
+    <script src="~/user/js/rev_slider/extensions/revolution.extension.kenburn.min.js"></script>
+    <script src="~/user/js/rev_slider/extensions/revolution.extension.layeranimation.min.js"></script>
+    <script src="~/user/js/rev_slider/extensions/revolution.extension.migration.min.js"></script>
+    <script src="~/user/js/rev_slider/extensions/revolution.extension.navigation.min.js"></script>
+    <script src="~/user/js/rev_slider/extensions/revolution.extension.parallax.min.js"></script>
+    <script src="~/user/js/rev_slider/extensions/revolution.extension.slideanims.min.js"></script>
+    <script src="~/user/js/rev_slider/extensions/revolution.extension.video.min.js"></script>
+    <!-- revolution slider js files end -->
+    <!-- custom scripts -->
+    <script src="~/admin/js/plugin/bootstrap-notify/bootstrap-notify.min.js"></script>
+    <script src="~/user/js/main.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+
+
+    <script>
+        $(function () {
+            var userIdForNotify = @Session.UserId;
+            var userRoleForNotify = `@Session.Role`;
+
+            const notificationConnection = new signalR.HubConnectionBuilder()
+                .withUrl("/notificationHub")
+                .build();
+
+            notificationConnection.on("ReceiveNotification", function (userId, role, message) {
+                console.log(userId)
+                console.log(userIdForNotify)
+                if (userId === userIdForNotify) {
+                    Notify('success', message);
+                    notification.markAllAsRead();
+                }
+            });
+
+            notificationConnection.start().catch(function (err) {
+                return console.error(err.toString());
+            });
+        });
+    </script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

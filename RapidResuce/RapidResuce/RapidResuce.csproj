@@ -1,0 +1,40 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Files\EmailTemplates\RegisterationConfirmation_Template.html" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Files\EmailTemplates\RegisterationConfirmation_Template.html" />
+    <Content Include="Files\EmailTemplates\EmailVerification_Template.html" />
+    <Content Include="Files\EmailTemplates\ResetPassword_Template.html" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Http.Connections.Client" Version="8.0.8" />
+    <PackageReference Include="Microsoft.AspNetCore.SignalR.Client" Version="8.0.8" />
+    <PackageReference Include="Microsoft.AspNetCore.SignalR.Client.Core" Version="8.0.8" />
+    <PackageReference Include="Microsoft.AspNetCore.SignalR.Common" Version="8.0.8" />
+    <PackageReference Include="Microsoft.entityframeworkcore" Version="8.0.8" />
+    <PackageReference Include="Microsoft.entityframeworkcore.design" Version="8.0.8">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.entityframeworkcore.sqlserver" Version="8.0.8" />
+    <PackageReference Include="Microsoft.entityframeworkcore.tools" Version="8.0.8">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.5" />
+    <PackageReference Include="MimeKit" Version="4.7.1" />
+    <PackageReference Include="NETCore.MailKit" Version="2.1.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+
+</Project>

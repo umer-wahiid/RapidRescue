@@ -1,0 +1,139 @@
+is_global = true
+build_property.TargetFramework = net8.0
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = RapidResuce
+build_property.RootNamespace = RapidResuce
+build_property.ProjectDir = C:\Users\FCC\Documents\GitHub\Techwiz5\RapidResuce\RapidResuce\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\FCC\Documents\GitHub\Techwiz5\RapidResuce\RapidResuce
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/FCC/Documents/GitHub/Techwiz5/RapidResuce/RapidResuce/Views/Admin/AdminProfile.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQWRtaW5Qcm9maWxlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/FCC/Documents/GitHub/Techwiz5/RapidResuce/RapidResuce/Views/Admin/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/FCC/Documents/GitHub/Techwiz5/RapidResuce/RapidResuce/Views/Ambulances/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQW1idWxhbmNlc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/FCC/Documents/GitHub/Techwiz5/RapidResuce/RapidResuce/Views/Contact/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGFjdFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/FCC/Documents/GitHub/Techwiz5/RapidResuce/RapidResuce/Views/EmergencyRequests/AssignedList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1lcmdlbmN5UmVxdWVzdHNcQXNzaWduZWRMaXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/FCC/Documents/GitHub/Techwiz5/RapidResuce/RapidResuce/Views/EmergencyRequests/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1lcmdlbmN5UmVxdWVzdHNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/FCC/Documents/GitHub/Techwiz5/RapidResuce/RapidResuce/Views/EmergencyRequests/List.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1lcmdlbmN5UmVxdWVzdHNcTGlzdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/FCC/Documents/GitHub/Techwiz5/RapidResuce/RapidResuce/Views/EmergencyRequests/RequestTracking.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1lcmdlbmN5UmVxdWVzdHNcUmVxdWVzdFRyYWNraW5nLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/FCC/Documents/GitHub/Techwiz5/RapidResuce/RapidResuce/Views/Feeback/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmVlYmFja1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/FCC/Documents/GitHub/Techwiz5/RapidResuce/RapidResuce/Views/FirstAids/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmlyc3RBaWRzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/FCC/Documents/GitHub/Techwiz5/RapidResuce/RapidResuce/Views/Home/About.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBYm91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/FCC/Documents/GitHub/Techwiz5/RapidResuce/RapidResuce/Views/Home/AmbulanceDetail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBbWJ1bGFuY2VEZXRhaWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/FCC/Documents/GitHub/Techwiz5/RapidResuce/RapidResuce/Views/Home/Gallery.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxHYWxsZXJ5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/FCC/Documents/GitHub/Techwiz5/RapidResuce/RapidResuce/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/FCC/Documents/GitHub/Techwiz5/RapidResuce/RapidResuce/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/FCC/Documents/GitHub/Techwiz5/RapidResuce/RapidResuce/Views/Home/Team.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxUZWFtLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/FCC/Documents/GitHub/Techwiz5/RapidResuce/RapidResuce/Views/Login/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/FCC/Documents/GitHub/Techwiz5/RapidResuce/RapidResuce/Views/MedicalProfile/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVkaWNhbFByb2ZpbGVcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/FCC/Documents/GitHub/Techwiz5/RapidResuce/RapidResuce/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/FCC/Documents/GitHub/Techwiz5/RapidResuce/RapidResuce/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/FCC/Documents/GitHub/Techwiz5/RapidResuce/RapidResuce/Views/UserAuth/EditProfile.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlckF1dGhcRWRpdFByb2ZpbGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/FCC/Documents/GitHub/Techwiz5/RapidResuce/RapidResuce/Views/UserAuth/Profile.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlckF1dGhcUHJvZmlsZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/FCC/Documents/GitHub/Techwiz5/RapidResuce/RapidResuce/Views/UserAuth/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlckF1dGhcUmVnaXN0ZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/FCC/Documents/GitHub/Techwiz5/RapidResuce/RapidResuce/Views/Users/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/FCC/Documents/GitHub/Techwiz5/RapidResuce/RapidResuce/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/FCC/Documents/GitHub/Techwiz5/RapidResuce/RapidResuce/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/FCC/Documents/GitHub/Techwiz5/RapidResuce/RapidResuce/Views/Shared/_AdminLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9BZG1pbkxheW91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = b-j5rvehsh8c
+
+[C:/Users/FCC/Documents/GitHub/Techwiz5/RapidResuce/RapidResuce/Views/Shared/_UserLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Vc2VyTGF5b3V0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = b-63us51c126

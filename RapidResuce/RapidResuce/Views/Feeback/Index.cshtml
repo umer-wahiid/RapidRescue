@@ -1,0 +1,103 @@
+﻿@model Feedback
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+<!-- start page title section -->
+<section class="page-title-section bg-img cover-background" data-overlay-dark="75" data-background="/user/img/banner/page-title.jpg">
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-12">
+            &nbsp;
+                <h1>Feedback</h1>
+            </div>
+            <div class="col-md-12">
+                <ul>
+                    <li><a href="https://danslacuisinededede.com/">Home</a></li>
+                    <li><a href="javascript:void(0)">Feedback</a></li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</section>
+<!-- end page title section -->
+<!-- start contact-info section -->
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 sm-margin-25px-bottom">
+                <div class="padding-30px-all sm-padding-25px-all xs-padding-20px-all bg-light-gray text-center">
+                    <i class="ti-email font-size40 sm-font-size38 xs-font-size34 text-theme-color"></i>
+                    <h5 class="margin-5px-bottom margin-20px-top sm-margin-15px-top font-size20 xs-font-size18">Email Us:</h5>
+                    <p class="no-margin-bottom">info@rapidResuce.gmail.com</p>
+                </div>
+            </div>
+            <div class="col-lg-4 sm-margin-25px-bottom">
+                <div class="padding-30px-all sm-padding-25px-all xs-padding-20px-all bg-light-gray text-center">
+                    <i class="ti-mobile font-size40 sm-font-size38 xs-font-size34 text-theme-color"></i>
+                    <h5 class="margin-5px-bottom margin-20px-top sm-margin-15px-top font-size20 xs-font-size18">Call Us:</h5>
+                    <p class="no-margin-bottom">(+92) 317 0241586</p>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="padding-30px-all sm-padding-25px-all xs-padding-20px-all bg-light-gray text-center">
+                    <i class="ti-location-pin font-size40 sm-font-size38 xs-font-size34 text-theme-color"></i>
+                    <h5 class="margin-5px-bottom margin-20px-top sm-margin-15px-top font-size20 xs-font-size18">Our Address:</h5>
+                    <p class="no-margin-bottom">Abc Street, Karachi Pakistan</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end contact-info section -->
+<!-- start form section -->
+<section class="no-padding-top">
+    <div class="container">
+        <div class="padding-40px-all sm-padding-30px-all xs-padding-20px-all bg-light-gray">
+            <h4 class="font-size38 sm-font-size34 xs-font-size28 line-height-45 sm-line-height-40 font-weight-500 margin-10px-bottom text-center">Feedback</h4>
+            <p class="margin-50px-bottom sm-margin-30px-bottom xs-margin-25px-bottom width-60 md-width-70 sm-width-auto center-col text-center">We're here to assist you 24/7 with any inquiries or support.</p>
+            <form action="post" id="feedbackForm">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label>Emergency Request</label>
+                            @* <input name="requestId" type="text" class="no-margin-bottom"> *@
+                            <select name="emergencyRequestId" class="no-margin-bottom">
+                                @foreach (var item in ViewBag.EmergencyRequest)
+                                {
+                                    <option value="@item.Id">@item.MedicalInfo</option>
+                                }
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label>Rating</label>
+                            @* <input type="text" name="rating" class="no-margin-bottom"> *@
+                            <select name="rating" asp-items="Html.GetEnumSelectList<RapidResuce.Enums.Rating>()"></select>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 margin-20px-bottom sm-margin-10px-bottom">
+                        <div class="form-group">
+                            <label>Message</label>
+                            <textarea name="comments" class="form-control line-height-70"></textarea>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="Send">
+                            <button class="butn" type="button" onclick="feedback.save(event)">Submit</button>
+                        </div>
+                    </div>
+                </div>
+
+            </form>
+            <p class="form-messege"></p>
+        </div>
+    </div>
+</section>
+<!-- end form section -->
+
+

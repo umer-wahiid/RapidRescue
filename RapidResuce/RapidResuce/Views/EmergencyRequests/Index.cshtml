@@ -1,0 +1,112 @@
+﻿@model EmergencyRequest
+@using RapidResuce.Enums
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+<!-- start page title section -->
+<section class="page-title-section bg-img cover-background" data-overlay-dark="75" data-background="/user/img/banner/page-title.jpg">
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-12">
+                &nbsp;
+                <h1>Emergency Request</h1>
+            </div>
+            <div class="col-md-12">
+                <ul>
+                    <li><a asp-action="Index" asp-controller="Home">Home</a></li>
+                    <li><a href="javascript:void(0)">Emergency Request</a></li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</section>
+<!-- end page title section -->
+<div class="gradient-custom">
+    <div class="container py-5 h-100">
+        <div class="row justify-content-center align-items-center h-100">
+            <div class="col-12 col-lg-9 col-xl-7">
+                <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
+                    <div class="card-body p-4 p-md-5">
+                        <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 w-100 text-center">Emergency Request</h3>
+                        <form id="frmEmergencyRequest" enctype="multipart/form-data">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+
+
+                            <div class="row">
+                                <div class="col-md-6 ">
+                                    <div class="form-group">
+                                        <label class="form-label form-label-sm" for="hospitalName" asp-for="HospitalName">Hospital Name</label>
+                                        <input type="text" asp-for="HospitalName" id="hospitalName" class="form-control form-control-sm" />
+                                        <span asp-validation-for="HospitalName" class="text-danger small"></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="form-label form-label-sm" asp-for="EmergencyContact" for="emergencyContact">Emergency Contact</label>
+                                        <input type="text" asp-for="EmergencyContact" id="emergencyContact" class="form-control form-control-sm" />
+                                        <span asp-validation-for="EmergencyContact" class="text-danger small"></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label class="control-label control-label-sm" asp-for="PickupAddress" for="pickupAddress">Pickup Address</label>
+                                        <input type="text" asp-for="PickupAddress" id="pickupAddress" class="form-control form-control-sm" />
+                                        <span asp-validation-for="PickupAddress" class="text-danger small"></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="control-label control-label-sm" for="type" asp-for="Type">Priority </label>
+                                        <select type="text" asp-for="Type" asp-items="Html.GetEnumSelectList<RequestType>()" id="type" class="form-control form-control-sm"></select>
+                                        <span asp-validation-for="Type" class="text-danger small"></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="control-label control-label-sm" for="equipmentLevel" asp-for="EquipmentLevel">Ambulance Type</label>
+                                        <select type="text" asp-for="EquipmentLevel" asp-items="Html.GetEnumSelectList<EquipmentLevel>()" id="equipmentLevel" class="form-control form-control-sm"></select>
+                                        <span asp-validation-for="EquipmentLevel" class="text-danger small"></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label class="control-label control-label-sm" asp-for="FirstAidId"></label>
+                                        <select asp-for="FirstAidId" asp-items="ViewBag.Symptoms" id="symptoms" class="form-control form-control-sm"></select>
+                                        <span asp-validation-for="Type" class="text-danger small"></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 mb-4">
+                                    <div class="form-group">
+                                        <label class="control-label control-label-sm" asp-for="MedicalInfo" for="medicalInfo">Medical Info</label>
+                                        <textarea type="text" asp-for="MedicalInfo" id="medicalInfo" class="form-control "></textarea>
+                                        <span asp-validation-for="MedicalInfo" class="text-danger small"></span>
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+
+
+                            <div class="mt-4 pt-2">
+                                <input data-mdb-ripple-init class="btn btn-primary btn-lg" style="background-color:#2a2f5b;" type="button" onclick="emergencyRequest.save()" value="Submit" />
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

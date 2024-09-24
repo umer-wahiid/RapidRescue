@@ -1,0 +1,122 @@
+﻿@model FirstAid
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<div class="row">
+    <div class="col-12">
+        <div class="card card-round">
+            <div class="card-header" style="border-top: 1px solid #ebecec !important;">
+                <div class="d-flex align-items-center justify-content-between">
+                    <h4 class="card-title">Precautions For Related Symptoms</h4>
+                    <div class="d-flex align-items-center justify-content-between">
+
+                        <button class="btn btn-primary btn-sm mx-1 fw-bold  px-5" data-bs-toggle="modal"
+                                data-bs-target="#firstAidModal">
+                            <i class="fa fa-plus text-White mx-1" aria-hidden="true"></i>
+                            Add First-Aid
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <div id="firstAidGrid"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Delete Confirmation Modal -->
+<div class="modal fade" id="DeleteConfirmationModal" tabindex="-1" role="dialog" aria-labelledby="confirmationModalLabel" aria-modal="true">
+    <div class="modal-dialog modal-dialog-centered" role="document" style="min-width : 700px">
+        <div class="modal-content">
+            <div class="modal-header border-0 d-flex justify-content-end">
+                <h5 class="modal-title fw-bold" id="exampleModalLongTitle">Confirm</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body px-5 py-5">
+                <i class="fa fa-times-circle-o me-3" aria-hidden="true" style="font-size: 25px;color: red !important;"></i>
+                <h3 class=" mb-4 d-inline" style="font-weight :900 !important">Are you sure to delete this firstAid?</h3>
+            </div>
+            <div class="modal-footer border-0 ">
+                <button class="btn btn-primary px-5 btn-sm fw-bold me-3" onclick="firstAid.delete()" style="font-size: 14px;">
+                    <i class="fa fa-save me-2" aria-hidden="true"></i> Yes
+                </button>
+                <button type="button" class="btn btn-danger fw-bold btn-sm px-3" data-bs-dismiss="modal" style="font-size: 14px;">
+                    <i class="fa fa-times me-2" aria-hidden="true"></i> Cancel
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Add/Edit/View firstAid Modal -->
+<div class="modal fade" id="firstAidModal" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered" style="min-width: 50%;" role="document">
+        <div class="modal-content">
+            <div class="modal-header  text-white" style="background-color:#2a2f5b !important">
+                <h5 class="modal-title fw-bold" id="modalTitle">
+                    Add First-Aid
+                </h5>
+                <button type="button"
+                        class="btn-close btn-close-white"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+            </div>
+            <div class="modal-body px-4 pt-5" style="background-color:#f5f7fd;">
+                <div class="card mt-3">
+                    <div class="card-body">
+                        <form id="frmFirstAid" asp-action="Create" class="py-2" enctype="multipart/form-data">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <div class="row ">
+                                <div class="col-sm-12 col-md-12">
+                                    <div class="form-group">
+                                        <label asp-for="symptoms" class="control-label control-label-sm fw-bold"></label>
+                                        <input asp-for="symptoms" id="symptoms" class="form-control form-control-sm" />
+                                        <span asp-validation-for="symptoms" class="text-danger small"></span>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 col-md-12">
+                                    <div class="form-group">
+                                        <label asp-for="FirstAidDetail" class="control-label control-label-sm fw-bold"></label>
+                                        <textarea asp-for="FirstAidDetail" id="firstAidDetail" class="form-control form-control-sm"></textarea>
+                                        <span asp-validation-for="FirstAidDetail" class="text-danger small"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer border-top">
+                <button class="btn btn-primary px-5 btn-sm fw-bold" id="btnSave" onclick="firstAid.save()">
+                    <i class="fa fa-save me-1" aria-hidden="true"></i>
+                    <span>Save</span>
+                </button>
+                <button type="button"
+                        class="btn btn-danger btn-sm"
+                        data-bs-dismiss="modal">
+                    <i class="fa fa-times me-1" aria-hidden="true"></i>
+                    Close
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section scripts {
+    <script>
+
+        $(function () {
+            firstAid.onInit();
+        });
+
+    </script>
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

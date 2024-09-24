@@ -1,0 +1,139 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-3 col-sm-6 p-1">
+        <div class="card card-stats card-round">
+            <div class="card-body">
+                <div class="row align-items-center">
+                    <div class="col-icon">
+                        <div class="icon-big text-center icon-primary bubble-shadow-small">
+                            <i class="fas fa-users" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                    <div class="col col-stats ms-3 ms-sm-0">
+                        <div class="numbers">
+                            <p class="card-category">Completed</p>
+                            <h4 class="card-title">
+                                @ViewBag.Completed
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 col-sm-6 p-1">
+        <div class="card card-stats card-round">
+            <div class="card-body">
+                <div class="row align-items-center">
+                    <div class="col-icon">
+                        <div class="icon-big text-center icon-info bubble-shadow-small">
+                            <i class="fas fa-user-check" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                    <div class="col col-stats ms-3 ms-sm-0">
+                        <div class="numbers">
+                            <p class="card-category">Inprogress</p>
+                            <h4 class="card-title">
+                                @ViewBag.InProgress
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 col-sm-6 p-1">
+        <div class="card card-stats card-round">
+            <div class="card-body">
+                <div class="row align-items-center">
+                    <div class="col-icon">
+                        <div class="icon-big text-center icon-success bubble-shadow-small">
+                            <i class="fas fa-luggage-cart" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                    <div class="col col-stats ms-3 ms-sm-0">
+                        <div class="numbers">
+                            <p class="card-category">Pending</p>
+                            <h4 class="card-title">
+                                @ViewBag.Pending
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 col-sm-6 p-1">
+        <div class="card card-stats card-round">
+            <div class="card-body">
+                <div class="row align-items-center">
+                    <div class="col-icon">
+                        <div class="icon-big text-center icon-secondary bubble-shadow-small">
+                            <i class="far fa-check-circle" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                    <div class="col col-stats ms-3 ms-sm-0">
+                        <div class="numbers">
+                            <p class="card-category">Cancelled</p>
+                            <h4 class="card-title">
+                                @ViewBag.Cancelled
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12">
+        @if (Session.Role == RapidResuce.Enums.UserRole.Admin)
+        {
+            <div class="card card-round" id="buildContractSchedule">
+                <div class="card-header" style="border-top: 1px solid #ebecec !important;">
+                    <div class="d-flex align-items-center justify-content-between">
+                        <h4 class="card-title">Active Ambulances</h4>
+                        <div class="d-flex align-items-center justify-content-between">
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div id="map" style="height: 500px; width: 100%;"></div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+<div class="row">
+    <div class="card card-round">
+        <div class="card-header" style="border-top: 1px solid #ebecec !important;">
+            <div class="d-flex align-items-center justify-content-between">
+                <h4 class="card-title">Request Status</h4>
+                <div class="d-flex align-items-center justify-content-between">
+                </div>
+            </div>
+        </div>
+        <div id="barChartContainer" style="height: 400px;"></div>
+    </div>
+</div>
+
+@section scripts {
+    <script>
+
+        $(function () {
+            dash.chart(@ViewBag.Completed, @ViewBag.InProgress, @ViewBag.Pending, @ViewBag.Cancelled);
+        });
+
+    </script>
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

@@ -1,0 +1,84 @@
+﻿@model RapidResuce.Models.Ambulance
+
+@{
+    ViewData["Title"] = "AmbulanceDetail";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+<!-- start page title section -->
+<section class="page-title-section bg-img cover-background" data-overlay-dark="75" data-background="/user/img/banner/page-title.jpg">
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-12">
+                &nbsp;
+
+                <h1>Ambulance Details</h1>
+            </div>
+            <div class="col-md-12">
+                <ul>
+                    <li><a asp-action="Index" asp-controller="Home">Home</a></li>
+                    <li><a href="javascript:void(0)">Ambulance Details</a></li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</section>
+<!-- end page title section -->
+<section>
+    <div class="container">
+        <div class="project-detail-block">
+            <div class="row margin-40px-bottom md-margin-25px-bottom">
+                <div class="col-lg-8 sm-margin-25px-bottom">
+                    <div class="">
+                        <img src="~/@Html.DisplayFor(model => model.Image)" alt="" />
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="padding-20px-left md-no-padding-left">
+                        <h5> Trust Our Ambulance</h5>
+                        <p class="md-display-none sm-display-block">Dedicated to saving lives, our trusted ambulances are equipped with top-tier medical professionals and state-of-the-art equipment, ready to respond swiftly when it matters most.</p>
+                        <ul class="project-list no-margin-bottom">
+                            <li>
+                                <i class="ti-truck"></i>
+                                <h6 class="no-margin-bottom font-size16 xs-font-size15 line-height-22 font-weight-500">Ambulance Number</h6>
+                                <p class="no-margin-bottom">
+                                    @Html.DisplayFor(model => model.VehicleNumber)
+                                </p>
+                            </li>
+                            <li>
+                                <i class="ti-user"></i>
+                                <h6 class="no-margin-bottom font-size16 xs-font-size15 line-height-22 font-weight-500">Emt</h6>
+                                <p class="no-margin-bottom">
+                                    @Html.DisplayFor(model => model.Emt.FirstName) @Html.DisplayFor(model => model.Emt.LastName)
+                                </p>
+                            </li>
+                            <li>
+                                <i class="ti-user"></i>
+                                <h6 class="no-margin-bottom font-size16 xs-font-size15 line-height-22 font-weight-500">Driver</h6>
+                                <p class="no-margin-bottom">
+                                    @Html.DisplayFor(model => model.Driver.FirstName) @Html.DisplayFor(model => model.Driver.LastName)
+                                </p>
+                            </li>
+                            <li>
+                                <i class="ti-bookmark"></i>
+                                <h6 class="no-margin-bottom font-size16 xs-font-size15 line-height-22 font-weight-500">Equipment Level</h6>
+                                <p class="no-margin-bottom">
+                                    @Html.DisplayFor(model => model.EquipmentLevel)
+                                </p>
+                            </li>
+                            <li>
+                                <i class="ti-location-pin"></i>
+                                <h6 class="no-margin-bottom font-size16 xs-font-size15 line-height-22 font-weight-500">Location</h6>
+                                <p class="no-margin-bottom">
+                                    @Html.DisplayFor(model => model.Emt.Address)
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

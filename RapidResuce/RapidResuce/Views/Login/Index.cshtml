@@ -1,0 +1,82 @@
+﻿@model RapidResuce.Models.User
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - RapidResuce</title>
+    <!-- Fonts and icons -->
+    <script src="https://kit.fontawesome.com/1b91fe7d3f.js" crossorigin="anonymous"></script>
+    <!-- Fonts and icons -->
+    <script src="~/admin/js/plugin/webfont/webfont.min.js"></script>
+    <script>
+        WebFont.load({
+            google: { families: ["Public Sans:300,400,500,600,700"] },
+            custom: {
+                families: [
+                    "Font Awesome 5 Solid",
+                    "Font Awesome 5 Regular",
+                    "Font Awesome 5 Brands",
+                    "simple-line-icons",
+                ],
+                urls: ["/admin/css/fonts.min.css"],
+            },
+            active: function () {
+                sessionStorage.fonts = true;
+            },
+        });
+    </script>
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="~/admin/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/admin/css/plugins.min.css" />
+    <link rel="stylesheet" href="~/admin/css/kaiadmin.min.css" />
+
+</head>
+<body>
+
+    <div class=" d-flex justify-content-center align-items-center min-vh-100">
+        <div class=" card col-sm-12 col-md-4 col-lg-3">
+
+            <div class="card-body">
+                <!-- Logo -->
+                <div class="text-center w-100">
+                    <span class="fw-bold">
+                        <img src="~/user/img/logos/darklogo.png" width="200" alt="Logo" />
+                    </span>
+                </div>
+                <!-- /Logo -->
+                <div>
+                    <form asp-action="Login" class="mb-3">
+                        <div class="mb-3">
+                            <label for="Email" class="form-label">Email</label>
+                             <input asp-for="Email" type="text" class="form-control" placeholder="Enter Email Address..." required autofocus /> 
+                        </div>
+                        <div class="mb-3 form-password-toggle">
+                            <div class="d-flex justify-content-between">
+                                <label class="form-label" for="password">Password</label>
+
+                            </div>
+                            <div class="input-group input-group-merge">
+                                <input asp-for="Password" name="password" id="password" type="password" aria-describedby="password" class="form-control" placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" required>
+                                <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
+                            </div>
+                        </div>
+                        <div class="text-danger small mb-1">@ViewBag.error</div>
+                        <div class="mb-3">
+                            <button class="btn btn-primary d-grid w-100" type="submit">Sign in</button>
+                        </div>
+                    </form>
+                    <div class="mb-3">
+                        <label class="form-check-label">Don't have an account?  <a asp-action="Register" asp-controller="UserAuth" class="toggleLink"> Sign Up</a></label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+

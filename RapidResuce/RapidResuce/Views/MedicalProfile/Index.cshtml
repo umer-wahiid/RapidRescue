@@ -1,0 +1,125 @@
+﻿@using RapidResuce.Enums
+@model RapidResuce.Models.MedicalProfile
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+    var role = UserRole.Patient;
+    var userId = Session.UserId;
+}
+
+<style>
+
+    .card-registration .select-input.form-control[readonly]:not([disabled]) {
+        font-size: 1rem;
+        line-height: 2.15;
+        padding-left: .75em;
+        padding-right: .75em;
+    }
+
+    .card-registration .select-arrow {
+        top: 13px;
+    }
+</style>
+<!-- start page title section -->
+<section class="page-title-section bg-img cover-background" data-overlay-dark="75" data-background="/user/img/banner/page-title.jpg">
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-12">
+                &nbsp;
+                <h1>Medical Profile</h1>
+            </div>
+            <div class="col-md-12">
+                <ul>
+                    <li><a asp-action="Index" asp-controller="Home">Home</a></li>
+                    <li><a href="javascript:void(0)">Medical Profile</a></li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</section>
+<!-- end page title section -->
+<div class="gradient-custom">
+    <div class="container py-5 h-100">
+        <div class="row justify-content-center align-items-center h-100">
+            <div class="col-12 col-lg-12 col-xl-12">
+                <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
+                    <div class="card-body p-4 p-md-5">
+                        <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 w-100 text-center">Medical Profile</h3>
+                        <form id="frmUser" enctype="multipart/form-data">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <div class="row">
+                                <div class="col-4 p-2">
+                                    <div class="form-group">
+                                        <div class="custom-file-button d-none align-items-center">
+                                            <label for="image" class="mb-0 fw-bold text-center" style="cursor: pointer; width: 100%;">Click here to Uplaod Image...</label>
+                                            <input id="image" accept="image/*" name="image" type="file" class="d-none">
+                                        </div>
+
+                                        <div class="mt-3 text-center" style="height:50px;">
+                                            <img id="imagePreview" src="#" style="height:350px !important;" alt="Image Preview" style="max-width: 200px; display: none;" class="img-thumbnail" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-8 p-2">
+                                    <div class="row">
+                                        <div class="col-md-12 mb-4">
+                                            <input type="hidden" asp-for="UserId" value="@userId" class="form-control form-control-lg" />
+
+                                            <div data-mdb-input-init class="form-outline">
+                                                <label class="form-label" for="emergencyContact" asp-for="EmergencyContact"></label>
+                                                <input type="text" asp-for="EmergencyContact" id="emergencyContact" class="form-control form-control-lg" />
+                                                <span asp-validation-for="EmergencyContact" class="text-danger small"></span>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12 mb-4">
+                                            <div data-mdb-input-init class="form-outline">
+                                                <label class="form-label" asp-for="MedicalHistory" for="medicalHistory"></label>
+                                                <textarea type="text" asp-for="MedicalHistory" id="medicalHistory" class="form-control form-control-lg"></textarea>
+                                                <span asp-validation-for="MedicalHistory" class="text-danger small"></span>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12 mb-4">
+
+                                            <div data-mdb-input-init class="form-outline">
+                                                <label class="form-label" asp-for="Allergies" for="allergies"></label>
+                                                <textarea type="text" asp-for="Allergies" id="allergies" class="form-control form-control-lg"></textarea>
+                                                <span asp-validation-for="Allergies" class="text-danger small"></span>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="mt-4 pt-2">
+                                        <input data-mdb-ripple-init class="btn btn-primary btn-lg" style="background-color:#2a2f5b;" onclick="medicalProfile.save();" type="button" value="Submit" />
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section scripts {
+    <script>
+
+        $(function () {
+            user.populate(@userId);
+
+            medicalProfile.userId = @userId;
+            medicalProfile.populate(@userId);
+        });
+    </script>
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
